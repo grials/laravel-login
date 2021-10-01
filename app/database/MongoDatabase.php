@@ -12,7 +12,7 @@ class MongoDatabase implements NosqlServiceInterface
 
   public function __construct($host, $port, $database)
   {
-    $this->connection = new MongoClient( "mongodb://{$host}:{$port}" );
+    $this->connection = new MongoClientMatcher( "mongodb://{$host}:{$port}" );
     $this->database = $this->connection->{$database};
   }
 
