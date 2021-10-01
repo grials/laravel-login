@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'custom',
         'passwords' => 'users',
     ],
 
@@ -40,6 +40,10 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+        'custom'=>[
+            'driver' => 'json',
+            'provider' => 'mongo'
+        ]
     ],
 
     /*
@@ -64,7 +68,9 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],
-
+        'mongo'=>[
+            'driver' => 'mongo'
+        ]
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',
